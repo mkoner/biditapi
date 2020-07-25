@@ -479,7 +479,7 @@ app.get('/users',(req,res)=>{
 		data=>res.json(data)).catch(err=> res.status(400).json('unable to get users')) 
 })
 
-app.listen(3005,()=>{
-	console.log("server running on port 3005")
+app.listen(process.env.PORT||3005,()=>{
+	console.log(`server running on port ${process.env.PORT}`)
 });
 
