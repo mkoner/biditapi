@@ -61,7 +61,7 @@ app.use('/uploads',express.static('uploads'));
 
 
 app.get('/',(req,res)=>{
-	res.send(it is working);
+	res.send("it is working");
 })
 app.post('/adminsignin',(req,res)=>{
 	db.select('*').from('admin').where(
