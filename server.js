@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer');
 const db=knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host : 'postgresql-cubed-32025',
     user : 'postgres',
     password : 'mkoner',
     database : 'bidit'
