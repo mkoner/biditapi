@@ -57,41 +57,11 @@ app.use(cors());
 app.use('/uploads',express.static('uploads'));
  
 
-getTimeRemaining = (endtime)=>{
-  var countDownDate = new Date(endtime).getTime();
-  var now = new Date().getTime();
-  var t = countDownDate - now;
-  var seconds = Math.floor( (t/1000) % 60 );
-  var  minutes = Math.floor( (t/1000/60) % 60 );
-  var hours = Math.floor( (t/(1000*60*60)) % 24 );
-  var days = Math.floor( t/(1000*60*60*24) );
-  return {
-    total: t,
-    days: days,
-    hours: hours,
-    minutes: minutes,
-     seconds: seconds
-  };
-}
 
-
-initializeClock=(item)=>{
-   var timeinterval = setInterval(()=>{
-     var t = getTimeRemaining(item.endtime);
-     item.days=t.days;
-     item.hours=t.hours;
-     item.minutes=t.minutes;
-     item.secondes=t.seconds;
-     if(t.total<=0){
-       clearInterval(timeinterval);
-     }
- 
-   },1000);
- }
 
 
 app.get('/',(req,res)=>{
-	res.send(dataBase);
+	res.send(it is working);
 })
 app.post('/adminsignin',(req,res)=>{
 	db.select('*').from('admin').where(
